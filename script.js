@@ -3,7 +3,7 @@ const apikey = "1f1b011e5dfef6d0bf96c76912562bb8";
 function searchByCity() {
   var place = document.getElementById("input").value;
   var urlsearch =
-    `http://api.openweathermap.org/data/2.5/weather?q=${place}&` +
+    `https://api.openweathermap.org/data/2.5/weather?q=${place}&` +
     `appid=${apikey}`;
 
   fetch(urlsearch)
@@ -19,7 +19,7 @@ function searchByCity() {
 
 function weatherReport(data) {
   var urlcast =
-    `http://api.openweathermap.org/data/2.5/forecast?q=${data.name}&` +
+    `https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&` +
     `appid=${apikey}`;
 
   fetch(urlcast)
@@ -44,7 +44,7 @@ function weatherReport(data) {
       console.log(data.weather[0].description);
 
       let icon1 = data.weather[0].icon;
-      let iconurl = "http://api.openweathermap.org/img/w/" + icon1 + ".png";
+      let iconurl = "https://api.openweathermap.org/img/w/" + icon1 + ".png";
       document.getElementById("img").src = iconurl;
     });
 }
